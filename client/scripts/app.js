@@ -16,12 +16,21 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
+    MessageView.initialize();
 
   },
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
+      Messages.message = data;
+
+      for (var i = 0; i < 10; i++) {
+        var $rMessage = MessageView.render(Messages.message[Math.floor(Math.random() * 100)]);
+        MessagesView.$chats.append($rMessage);
+      }
+
+
       console.log(data);
 
       callback();

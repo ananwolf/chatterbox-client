@@ -1,13 +1,14 @@
 var Friends = {
 
   initialize: function() {
-    $(document).on('click', function(event) {
+    $('.username').on('click', function(event) {
+      console.log('I am not you friend yet!');
       Friends.toggleStatus();
     });
   },
 
   toggleStatus: function(friend) {
+    console.log('I am not you friend yet!');
 
   }
-  // $username.on('click', toggleStatus);
 };

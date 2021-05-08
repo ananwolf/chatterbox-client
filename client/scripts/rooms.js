@@ -4,7 +4,8 @@ var Rooms = {
       Rooms.add();
     });
   },
-  add: function() {
 
+  add: function(roomName) {
+    var $room = $('<div class="room"></div>');
   }
 };

@@ -10,7 +10,7 @@ var Parse = {
       contentType: 'application/json',
       success: successCB,
       error: errorCB || function (data) {
-        console.error('chatterbox: Failed to send message', error);
+        console.error('chatterbox: Failed to send message', data);
       }
     });
   },

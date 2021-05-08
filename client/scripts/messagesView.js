@@ -3,6 +3,7 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
+
   },
 
   renderMessage: function(message) {
@@ -14,9 +15,6 @@ var MessagesView = {
     $userName.appendTo(MessagesView.$chats);
     $message.appendTo($userName);
 
-  },
-
-  render: function() {
   }
 
 };

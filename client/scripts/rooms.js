@@ -5,27 +5,41 @@ var Rooms = {
     $(':button').on('click', function(event) {
       Rooms.add();
     });
-    // Rooms.displayRooms();
+    Rooms.updateRooms();
   },
 
-  displayRooms: function() {
-    // $('#rooms select').empty();
-    // this.list.forEach((room) => {
-    //   $('#rooms select').prepend(`<option value="${room}">${room}</option>`);
-    // });
-  //   var roomName = Messages.message[0].roomname;
-  //   // $('#rooms select').prepend(`<option value="${room}">${room}</option>`);
-  //   $('#rooms select').append($('<option>', {
-  //     value: "room",
-  //     text: 'roomName'
-  // }));
+  updateRooms: function() {
+    $('#rooms select').on('change', function(event) {
+      $('#chats').html('');
+      console.log($(event.target.innerText.slice(1)));
+      var currentRoom;
+      for (var element of Messages.message) {
+        if (element.roomname === $(this).val()) {
+          currentRoom = MessageView.render(element);
+          $('#chats').prepend(currentRoom);
+        }
+      }
+    });
+    // console.log(this.list);
+    // $('#rooms').val('value').change(function() {
+    //   $('#chats').html('');
+    //   console.log($(this).val());
+    //   var currentRoom;
+    //   for (var element of Messages.message) {
+    //     if (element.roomname === $(this).val()) {
+    //       currentRoom = MessageView.render(element);
+    //       $('#chats').prepend(currentRoom);
+    //     }
+    //   }
+    // })
   },
 
   add: function(roomName) {
+
     // Rooms.list.add(roomName);
 
     // var $room = $('<div class="room"></div>');
-    // Rooms.add(roomName);
+    // Rooms.updateRooms();
 
   }
 };

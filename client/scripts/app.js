@@ -27,14 +27,20 @@ var App = {
       // examine the response from the server request:
       Messages.message = data;
 
+      for (var element of Messages.message) {
+        if (element.roomname) {
+          $('#rooms select').append($('<option>', {
+            value: 'room',
+            text: element.roomname
+          }));
+        }
+
+      }
+
       for (var i = 0; i < 10; i++) {
         var $rMessage = MessageView.render(Messages.message[Math.floor(Math.random() * 100)]);
         MessagesView.$chats.append($rMessage);
       }
-      $('#rooms select').append($('<option>', {
-        value: 'room',
-        text: Messages.message[10].roomname
-      }));
 
       console.log(data);
 

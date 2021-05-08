@@ -7,10 +7,10 @@ var MessageView = {
       <div class="chat">
         <div class="username">
           "<%= username %>"
-          <p class="text">
-          "<%= text %>"
-          </p>
         </div>
+        <p class="text">
+          "<%= text %>"
+        </p>
         <div></div>
       </div>
     `)

@@ -9,8 +9,12 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    
-    console.log('click!');
+    var newMessage = {username: App.username, text: $('input').val()};
+    var $currentMessage = MessageView.render(newMessage);
+    $('#newChats').prepend($currentMessage);
+    Parse.create(newMessage);
+    console.log(newMessage);
+
   },
 
   setStatus: function(active) {

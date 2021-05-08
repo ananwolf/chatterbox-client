@@ -4,6 +4,8 @@ var App = {
 
   username: 'anonymous',
 
+  userFriends: [],
+
   initialize: function() {
     App.username = window.location.search.substr(10);
 
@@ -29,7 +31,10 @@ var App = {
         var $rMessage = MessageView.render(Messages.message[Math.floor(Math.random() * 100)]);
         MessagesView.$chats.append($rMessage);
       }
-
+      $('#rooms select').append($('<option>', {
+        value: 'room',
+        text: Messages.message[10].roomname
+      }));
 
       console.log(data);
 

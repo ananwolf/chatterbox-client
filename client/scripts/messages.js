@@ -1,4 +1,3 @@
 var Messages = {
-
-
+  _message: []
 };
